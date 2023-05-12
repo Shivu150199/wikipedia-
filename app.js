@@ -6,7 +6,15 @@ const resultDom = document.querySelector('.results')
 
 formDom.addEventListener('submit', (e) => {
   e.preventDefault()
-  const value = inputDom.value
+//   const value = inputDom.value
+  const sentence=inputDom.value;
+let doSplit=sentence.split(" ");
+
+for(let i=0;i<doSplit.length;i++){
+  doSplit[i]=doSplit[i][0].toUpperCase()+doSplit[i].substr(1);
+}
+const value=doSplit.join(" ");
+
   
 
   if (!value) {
